@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Gestão de Talentos - Onboarding de Novos Colaboradores</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="css.css" rel="stylesheet">
+
+    <script src="jquery.js"></script> 
+    <script src="jquery.form.js"></script> 
+ 
+    <script> 
+        $(document).ready(function() { 
+            $('#form-submit').ajaxForm(function(response) { 
+                alert(response); 
+                $("#form-submit").trigger("reset");
+            }); 
+
+        }); 
+    </script> 
+
+  </head>
+
+  <body>
+    <form id="form-submit" class="form-submit" action="https://us-central1-tcb-thecloudbootcamp.cloudfunctions.net/moodleUserAdd" method="POST">
+      <div class="text-center mb-4">
+        <img class="mb-4" src="logo.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Gestão de Talentos - Onboarding de Novos Colaboradores</h1>
+        <p>Preencha os dados do novo colaborador para enviar informações de onboarding:</p>
+      </div>
+
+      <div class="form-label-group">
+        <input type="text" id="inputNome" name="inputNome" class="form-control" placeholder="Primeiro nome" required autofocus>
+        <label for="inputNome">Primeiro nome</label>
+      </div>
+
+      <div class="form-label-group">
+        <input type="text" id="inputSobrenome" name="inputSobrenome" class="form-control" placeholder="Sobrenome" required autofocus>
+        <label for="inputSobrenome">Sobrenome</label>
+      </div>
+
+      <div class="form-label-group">
+        <input type="text" type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Endereço de e-mail" required autofocus>
+        <label for="inputEmail">Endereço de e-mail</label>
+      </div>
+
+      <button class="btn btn-lg btn-primary btn-block" style="background-color: #0F7FAA" type="submit">Enviar</button>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2021 The Cloud Bootcamp. Todos os Direitos Reservados (Site fictício - criado apenas para fins didáticos - proibida a reprodução) </p>
+    </form>
+  </body>
+</html>
